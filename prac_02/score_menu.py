@@ -8,6 +8,8 @@ def main():
             score = get_valid_score()
         elif choice == "P":
             print_result(score)
+        elif choice == "S":
+            show_stars(score)
 
 def get_valid_score():
     score = int(input("Enter score: "))
@@ -23,5 +25,8 @@ def print_result(score):
         print("Passable")
     else:
         print("Bad")
+
+def show_stars(score):
+    print("*" * score)
 
 main()
