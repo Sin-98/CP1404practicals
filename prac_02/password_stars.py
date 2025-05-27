@@ -1,5 +1,17 @@
 MINIMUM_LENGTH = 6
-password = input(f"Enter password of minimum length {MINIMUM_LENGTH}: ")
-while len(password) < MINIMUM_LENGTH:
+def main():
+    password = get_password()
+    print_asterisks(password)
+
+
+def print_asterisks(password):
+    print("*" * len(password))
+
+
+def get_password():
     password = input(f"Enter password of minimum length {MINIMUM_LENGTH}: ")
-print("*" * len(password))
+    while len(password) < MINIMUM_LENGTH:
+        password = input(f"Enter password of minimum length {MINIMUM_LENGTH}: ")
+    return password
+
+main()
