@@ -6,12 +6,22 @@ def main():
     while choice != "Q":
         if choice == "G":
             score = get_valid_score()
+        elif choice == "P":
+            print_result(score)
 
 def get_valid_score():
-    score = float(input("Enter score: "))
+    score = int(input("Enter score: "))
     while score < 0 or score > 100:
         print("Invalid score")
-        score = float(input("Enter score: "))
+        score = int(input("Enter score: "))
     return score
+
+def print_result(score):
+    if score >= 90:
+        print("Excellent")
+    elif score >= 50:
+        print("Passable")
+    else:
+        print("Bad")
 
 main()
