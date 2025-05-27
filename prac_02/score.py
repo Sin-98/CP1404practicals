@@ -2,11 +2,14 @@
 CP1404/CP5632 - Practical
 Broken program to determine score status
 """
+import random
 
 def main():
     """Get score and display its grade."""
     score = float(input("Enter score: "))
     print(determine_grade(score))
+    random_score = random.randint(1, 100)
+    print(determine_grade(random_score))
 
 def determine_grade(score):
     """Determine the grade of a score."""
