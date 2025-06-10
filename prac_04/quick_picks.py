@@ -5,6 +5,9 @@ MINIMUM = 1
 MAXIMUM = 45
 
 number_of_quick_picks = int(input("How many quick picks? "))
+while number_of_quick_picks < 0:
+    print("Invalid input")
+    number_of_quick_picks = int(input("How many quick picks? "))
 for i in range(number_of_quick_picks):
     quick_picks = []
     for j in range(NUMBERS_PER_LINE):
