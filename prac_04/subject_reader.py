@@ -9,6 +9,7 @@ FILENAME = "subject_data.txt"
 def main():
     data = load_data()
     print(data)
+    display_data(data)
 
 
 def load_data():
@@ -28,5 +29,9 @@ def load_data():
     input_file.close()
     return subjects
 
+def display_data(subjects):
+    """Display data from subjects list neatly."""
+    for subject in subjects:
+        print(f"{subject[0]} is taught by {subject[1]:12} and has {subject[2]:3} students.")
 
 main()
