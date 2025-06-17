@@ -1,10 +1,11 @@
 """
 Emails
 Estimate: 25 minutes
-Actual:    minutes
+Actual:   26 minutes
 """
 
 def main():
+    """Make a dictionary of email_to_name."""
     email_to_name = {}
     email = input("Email: ")
     while email != "":
