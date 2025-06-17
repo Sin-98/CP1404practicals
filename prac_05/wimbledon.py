@@ -14,5 +14,12 @@ def main():
             parts = line.strip().split(",")
             records.append(parts)
     print(records)
+    champion_to_count = {}
+    countries = set()
+    for record in records:
+        countries.add(record[1])
+        champion_to_count[record[2]] = champion_to_count.get(record[2], 0) + 1
+    print(champion_to_count)
+    print(countries)
 
 main()
