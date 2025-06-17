@@ -12,6 +12,4 @@ for word in words:
     word_to_count[word] = count + 1
 words = list(word_to_count.keys())
 words.sort()
-
-print(words)
-print(word_to_count)
+max_length = max(len(word) for word in words)
