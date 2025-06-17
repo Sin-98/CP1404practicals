@@ -14,6 +14,7 @@ def main():
             parts = line.strip().split(",")
             records.append(parts)
     print(records)
+
     champion_to_count = {}
     countries = set()
     for record in records:
@@ -21,5 +22,11 @@ def main():
         champion_to_count[record[2]] = champion_to_count.get(record[2], 0) + 1
     print(champion_to_count)
     print(countries)
+
+    print("Wimbledon Champions:")
+    for name, count in champion_to_count.items():
+        print(f"{name} {count}")
+    print(f"These {len(countries)} countries have won Wimbledon:")
+    print(",".join(sorted(countries)))
 
 main()
