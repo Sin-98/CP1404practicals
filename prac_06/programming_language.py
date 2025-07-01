@@ -1,10 +1,10 @@
 """
 Programming language
 Estimate: 20 minutes
-Actual:    minutes
+Actual:   16 minutes
 """
 
-class ProgrammiingLanguage:
+class ProgrammingLanguage:
     """Represent a programming language."""
     def __init__(self, name, typing, reflection, year):
         """Initialize a programming language."""
