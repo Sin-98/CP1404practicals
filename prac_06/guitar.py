@@ -1,7 +1,7 @@
 """
 Guitar
 Estimate: 30 minutes
-Actual:    minutes
+Actual:   45 minutes
 """
 from datetime import date
 VINTAGE_AGE = 50
