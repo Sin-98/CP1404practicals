@@ -4,6 +4,7 @@ Estimate: 30 minutes
 Actual:    minutes
 """
 from datetime import date
+VINTAGE_AGE = 50
 
 class Guitar:
     """Represents details of a guitar."""
@@ -21,3 +22,7 @@ class Guitar:
         """Return the age of the Guitar."""
         current_year = date.today().year
         return current_year - self.year
+
+    def is_vintage(self):
+        """Determine if the Guitar is vintage."""
+        return self.get_age() >= VINTAGE_AGE
