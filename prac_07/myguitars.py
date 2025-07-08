@@ -8,6 +8,9 @@ def main():
     print("My guitars:")
     display_guitars(guitars)
 
+    guitars.sort()
+    print("\nGuitars sorted by year:")
+    display_guitars(guitars)
 
 def load_guitars(guitars):
     """Read guitars from a file and return a list of Guitar objects."""
