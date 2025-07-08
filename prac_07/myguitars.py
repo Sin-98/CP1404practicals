@@ -1,3 +1,5 @@
+import csv
+
 from prac_07.guitar import Guitar
 
 FILENAME = "guitars.csv"
@@ -14,6 +16,8 @@ def main():
 
     new_guitars = get_new_guitars()
     guitars += new_guitars
+
+    save_guitars(FILENAME, guitars)
 
 def load_guitars(guitars):
     """Read guitars from a file and return a list of Guitar objects."""
@@ -42,5 +46,11 @@ def get_new_guitars():
         print(f"{guitar_to_add} added.")
         name = input("Name: ")
     return new_guitars
+
+def save_guitars(FILENAME, guitars):
+    """Write guitars to a file."""
+    with open(FILENAME, "w") as out_file:
+        for guitar in guitars:
+            print(f"{guitar.name},{guitar.year},{guitar.cost}", file=out_file)
 
 main()
