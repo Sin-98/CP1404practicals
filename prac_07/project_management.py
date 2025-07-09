@@ -20,6 +20,9 @@ def main():
         if choice == "l":
             filename = input("Filename: ")
             projects = load_projects(filename)
+        elif choice == "s":
+            filename = input("Filename: ")
+            save_projects(filename, projects)
 
 
 def load_projects(filename):
@@ -38,5 +41,11 @@ def load_projects(filename):
             projects.append(project)
     return projects
 
+def save_projects(filename, projects):
+    """Save projects to file."""
+    with open(filename, "w") as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for project in projects:
+            out_file.write(f"{project.save_string()}\n")
 
 main()
