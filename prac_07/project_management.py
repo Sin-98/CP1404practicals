@@ -23,7 +23,8 @@ def main():
         elif choice == "s":
             filename = input("Filename: ")
             save_projects(filename, projects)
-
+        elif choice == "d":
+            display_projects(projects)
 
 def load_projects(filename):
     """Load projects from file."""
@@ -47,5 +48,16 @@ def save_projects(filename, projects):
         out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
         for project in projects:
             out_file.write(f"{project.save_string()}\n")
+
+def display_projects(projects):
+    """Display complete and incomplete projects sorted by priority."""
+    incomplete = sorted([p for p in projects if not p.is_complete()])
+    complete = sorted([p for p in projects if p.is_complete()])
+    print("Incomplete projects:")
+    for p in incomplete:
+        print(f"  {p}")
+    print("Completed projects:")
+    for p in complete:
+        print(f"  {p}")
 
 main()
