@@ -1,7 +1,7 @@
 """
 Project Management
 Estimate: 60 minutes
-Actual:    minutes
+Actual:   75 minutes
 """
 import datetime
 
