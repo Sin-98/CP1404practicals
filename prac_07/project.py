@@ -1,0 +1,18 @@
+"""
+Project
+Estimate: 60 minutes
+Actual:    minutes
+"""
+import datetime
+
+
+class Project:
+    """A class to represent a project."""
+    def __init__(self, name, start_date, priority: int, cost_estimate: float, completion_percentage: int):
+        """Initialize a project."""
+        self.name = name
+        self.start_date = datetime.datetime.strptime(start_date, "%d/%m/%Y").date()
+        self.priority = priority
+        self.cost_estimate = cost_estimate
+        self.completion_percentage = completion_percentage
+
