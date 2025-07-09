@@ -31,3 +31,7 @@ class Project:
     def get_start_date_as_string(self):
         """Convert start date to string."""
         return self.start_date.strftime("%d/%m/%Y")
+
+    def save_string(self):
+        """Save the project in a string."""
+        return f"{self.name}\t{self.get_start_date_as_string()}\t{self.priority}\t{self.cost_estimate}\t{self.completion_percentage}"
