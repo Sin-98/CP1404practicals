@@ -16,6 +16,10 @@ def main():
     print(f"Loaded {len(projects)} projects from {FILENAME}")
     print(MENU)
     choice = input(">>> ").lower()
+    while choice != "q":
+        if choice == "l":
+            filename = input("Filename: ")
+            projects = load_projects(filename)
 
 
 def load_projects(filename):
