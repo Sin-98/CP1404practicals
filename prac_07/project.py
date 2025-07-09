@@ -20,3 +20,6 @@ class Project:
         """Display output."""
         return f"{self.name}, start: {self.start_date.strftime("%d/%m/%Y")}, priority: {self.priority}, estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%"
 
+    def __lt__(self, other):
+        """Less than."""
+        return self.priority < other.priority
