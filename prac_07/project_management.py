@@ -30,6 +30,8 @@ def main():
             filter_projects_by_date(projects)
         elif choice == "a":
             add_project(projects)
+        elif choice == "u":
+            update_project(projects)
 
 def load_projects(filename):
     """Load projects from file."""
@@ -82,5 +84,19 @@ def add_project(projects):
     cost = float(input("Cost estimate: $"))
     precent = int(input("Precent complete: "))
     projects.append(Project(name, date, priority, cost, precent))
+
+def update_project(projects):
+    """Update existing projects."""
+    for i , project in enumerate(projects):
+        print(f"{i} {project}")
+    project_choice = int(input("Project choice: "))
+    project = projects[project_choice]
+    print(project)
+    new_percentage = input("New percentage: ")
+    if new_percentage:
+        project.completion_percentage = int(new_percentage)
+    new_priority = input("New priority: ")
+    if new_priority:
+        project.priority = int(new_priority)
 
 main()
