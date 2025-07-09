@@ -25,6 +25,8 @@ def main():
             save_projects(filename, projects)
         elif choice == "d":
             display_projects(projects)
+        elif choice == "f":
+            filter_projects_by_date(projects)
 
 def load_projects(filename):
     """Load projects from file."""
@@ -59,5 +61,13 @@ def display_projects(projects):
     print("Completed projects:")
     for p in complete:
         print(f"  {p}")
+
+def filter_projects_by_date(projects):
+    """Ask the user for a date and display only projects that start after that date, sorted by date."""
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    filtered = sorted([p for p in projects if p.start_date >= filter_date], key=lambda p: p.start_date)
+    for p in filtered:
+        print(p)
 
 main()
