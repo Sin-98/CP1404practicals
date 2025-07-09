@@ -3,6 +3,7 @@ Project Management
 Estimate: 60 minutes
 Actual:    minutes
 """
+import datetime
 
 from prac_07.project import Project
 
@@ -27,6 +28,8 @@ def main():
             display_projects(projects)
         elif choice == "f":
             filter_projects_by_date(projects)
+        elif choice == "a":
+            add_project(projects)
 
 def load_projects(filename):
     """Load projects from file."""
@@ -69,5 +72,15 @@ def filter_projects_by_date(projects):
     filtered = sorted([p for p in projects if p.start_date >= filter_date], key=lambda p: p.start_date)
     for p in filtered:
         print(p)
+
+def add_project(projects):
+    """Ask the user for the inputs and add a new project"""
+    print("Let's add a new project")
+    name = input("Name: ")
+    date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost = float(input("Cost estimate: $"))
+    precent = int(input("Precent complete: "))
+    projects.append(Project(name, date, priority, cost, precent))
 
 main()
