@@ -23,3 +23,7 @@ class Project:
     def __lt__(self, other):
         """Less than."""
         return self.priority < other.priority
+
+    def is_complete(self):
+        """Determine if the project is complete."""
+        return self.completion_percentage >= 100
