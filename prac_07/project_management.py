@@ -32,6 +32,15 @@ def main():
             add_project(projects)
         elif choice == "u":
             update_project(projects)
+        else:
+            print("Invalid choice")
+        print(MENU)
+        choice = input(">>> ").lower()
+
+    response = input(f"Would you like to save to {FILENAME}? ")
+    if response in ("y", "yes"):
+        save_projects(FILENAME, projects)
+    print("Thank you for using custom-built project management software.")
 
 def load_projects(filename):
     """Load projects from file."""
