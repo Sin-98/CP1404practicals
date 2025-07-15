@@ -18,6 +18,10 @@ class DynamicLabelsApp(App):
         self.create_labels()
         return self.root
 
-
+    def create_labels(self):
+        """Create label for each name in the list."""
+        for name in self.names:
+            label = Label(text=name)
+            self.root.ids.main.add_widget(label)
 
 DynamicLabelsApp().run()
