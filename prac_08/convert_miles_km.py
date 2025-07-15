@@ -19,6 +19,11 @@ class MilesConverterApp(App):
         miles = self.convert_to_number(text)
         self.output_km = str(miles * MILES_TO_KM)
 
+    def handle_increment(self, text, change):
+        """Handle up/down button press."""
+        miles = self.convert_to_number(text) + change
+        self.root.ids.input_miles.text = str(miles)
+
     def convert_to_number(self, text):
         """Convert text to float."""
         try:
