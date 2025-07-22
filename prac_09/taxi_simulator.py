@@ -15,5 +15,10 @@ def main():
     while menu_choice != q:
         if menu_choice == "c":
             print("Taxis available: ")
+            display_taxis(taxis)
 
 
+def display_taxis(taxis):
+    """Display a taxis list."""
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
