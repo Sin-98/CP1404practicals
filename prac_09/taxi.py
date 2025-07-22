@@ -10,7 +10,7 @@ class Taxi(Car):
 
     price_per_km = 1.23
 
-    def __init__(self, name, fuel):
+    def __init__(self, name, fuel, price_per_km = None):
         """Initialise a Taxi instance, based on parent class Car."""
         super().__init__(name, fuel)
         # self.price_per_km = price_per_km
