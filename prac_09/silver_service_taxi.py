@@ -6,7 +6,7 @@ class SilverServiceTaxi(Taxi):
 
     def __init__(self, name, fuel, fanciness):
         """Initialize a SilverServiceTaxi."""
-        super().__init__(name, fuel)
+        super().__init__(name, fuel, Taxi.price_per_km)
         self.fanciness = fanciness
         self.price_per_km *= fanciness
 
